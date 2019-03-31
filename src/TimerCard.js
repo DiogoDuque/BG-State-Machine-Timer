@@ -98,9 +98,9 @@ export default class TimerCard extends Component {
           <CardActions>
             {time !== 0 && [
               (this.state.intervalHandle != null ?
-                <Button size="medium" color="primary" onClick={this.pauseCountDown}>Pause</Button> :
-                <Button size="medium" color="primary" onClick={this.resumeCountDown}>Resume</Button>),
-                <Button size="medium" color="primary" onClick={this.updateTimer}>Reset</Button>
+                <Button key={101} size="medium" color="primary" onClick={this.pauseCountDown}>Pause</Button> :
+                <Button key={102} size="medium" color="primary" onClick={this.resumeCountDown}>Resume</Button>),
+                <Button key={103} size="medium" color="primary" onClick={this.updateTimer}>Reset</Button>
               ]}
           </CardActions>
         </Card>

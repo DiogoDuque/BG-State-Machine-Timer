@@ -27,14 +27,14 @@ class MyCard extends Component {
   }
 
   render() {
-    const { classes, state, changeState } = this.props;
+    const { classes, state, changeState, round } = this.props;
     const { name, time } = state;
     return(
       <div>
       <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Round: 4
+            Round: {round}
           </Typography>
         </CardContent>
       </Card>
@@ -47,8 +47,8 @@ class MyCard extends Component {
             Next Actions
           </Typography>
         </CardContent>
-        <CardActions>
-          {state.nextStates.map(s => <Chip clickable label={s.name} className={classes.chip} onClick={() => changeState(s)} />)}
+        <CardActions style={{display: 'flex',flexWrap: 'wrap'}}>
+          {state.nextStates.map((s,i) => <Chip key={i} style={{marginBottom: 10}} clickable label={s.name} className={classes.chip} onClick={() => changeState(s)} />)}
         </CardActions>
       </Card>
     </div>
