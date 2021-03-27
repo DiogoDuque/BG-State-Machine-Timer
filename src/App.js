@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import StateMachine from './StateMachine';
+import GoTStateMachine from './GoTStateMachine';
+import SpiritIslandStateMachine from './SpiritIslandStateMachine';
 
 class App extends Component {
 
@@ -11,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <StateMachine/>
+        <SpiritIslandStateMachine/>
       </div>
     );
   }

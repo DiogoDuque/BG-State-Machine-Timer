@@ -1,29 +1,8 @@
 import React, { Component } from 'react';
 import MyCard from './MyCard';
+import State from './State';
 
-function State(name, time=0) {
-  this.name = name;
-  this.time = time;
-  this.nextStates = [];
-
-  this.getNextStateNames = () => {
-    const names = [];
-    this.nextStates.forEach(s => {
-      names.push(s.name);
-    })
-    return names;
-  };
-
-  this.addNextState = (state) => {
-    this.nextStates.push(state);
-  };
-
-  this.toString = () => {
-    return `${this.name}={${this.time},${this.getNextStateNames()}}`;
-  }
-}
-
-export default class StateMachine extends Component {
+export default class GoTStateMachine extends Component {
   constructor() {
     super();
 
