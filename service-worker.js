@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/BG-State-Machine-Timer/precache-manifest.f8fca9405d97b7f59fab8bf65bec2f31.js"
+  "/BG-State-Machine-Timer/precache-manifest.ac39648fb14727c504c917b5844120e5.js"
 );
 
 workbox.clientsClaim();
