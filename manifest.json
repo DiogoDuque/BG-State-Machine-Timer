@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "BG-SMT",
+  "name": "Board Game State Machine Timer",
   "icons": [
     {
       "src": "favicon.ico",
