@@ -9,6 +9,7 @@ export default class GoTStateMachine extends Component {
     //WESTEROS PHASE
     const west_cards = new State('Reveal Westeros cards');
     //PLANNING PHASE
+    cobst plan_vassals = new State('Choose Vassals');
     const plan_assign = new State('Assign Orders',360);
     const plan_reveal = new State('Reveal Orders');
     const plan_raven = new State('Use Messenger Raven', 45);
@@ -30,12 +31,13 @@ export default class GoTStateMachine extends Component {
 
 
     //WESTEROS PHASE
-    west_cards.addNextState(plan_assign);
+    west_cards.addNextState(plan_vassals);
     west_cards.addNextState(supply);
     west_cards.addNextState(mustering);
     west_cards.addNextState(clash);
     west_cards.addNextState(wildlings);
     //PLANNING PHASE
+    plan_vassals.addNextState(plan_assign);
     plan_assign.addNextState(plan_reveal);
     plan_reveal.addNextState(plan_raven);
     plan_raven.addNextState(act_raid);
