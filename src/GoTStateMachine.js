@@ -11,7 +11,7 @@ export default class GoTStateMachine extends Component {
     const bank_interest = new State('Pay Interest', 30);
     const west_cards = new State('Reveal Westeros cards');
     //PLANNING PHASE
-    cobst plan_vassals = new State('Choose Vassals');
+    const plan_vassals = new State('Choose Vassals');
     const plan_assign = new State('Assign Orders',360);
     const plan_reveal = new State('Reveal Orders');
     const plan_raven = new State('Use Messenger Raven', 45);
