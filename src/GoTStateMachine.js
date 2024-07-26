@@ -7,6 +7,8 @@ export default class GoTStateMachine extends Component {
     super();
 
     //WESTEROS PHASE
+    const bank_shift = new State('Shift Loans');
+    const bank_interest = new State('Pay Interest', 30);
     const west_cards = new State('Reveal Westeros cards');
     //PLANNING PHASE
     cobst plan_vassals = new State('Choose Vassals');
@@ -31,6 +33,9 @@ export default class GoTStateMachine extends Component {
 
 
     //WESTEROS PHASE
+    bank_shift.addNextState(bank_interest);
+    bank_interest.addNextState(bank_interest);
+    bank_interest.addNextState(west_cards);
     west_cards.addNextState(plan_vassals);
     west_cards.addNextState(supply);
     west_cards.addNextState(mustering);
@@ -45,7 +50,7 @@ export default class GoTStateMachine extends Component {
     act_raid.addNextState(act_march);
     act_march.addNextState(bat_support);
     act_march.addNextState(act_consolidate);
-    act_consolidate.addNextState(west_cards);
+    act_consolidate.addNextState(bank_shift);
     act_consolidate.addNextState(mustering);
     //ACTION PHASE - BATTLE
     bat_support.addNextState(bat_calc);
@@ -64,7 +69,7 @@ export default class GoTStateMachine extends Component {
   }
 
   changeState(state) {
-    if(this.state.currentState.name === 'Consolidate Power Orders' && state.name === 'Reveal Westeros cards')
+    if(this.state.currentState.name === 'Consolidate Power Orders' && state.name === 'Shift Loans')
       this.setState({currentRound: this.state.currentRound+1});
     if(state.nextStates.length === 0)
     {
